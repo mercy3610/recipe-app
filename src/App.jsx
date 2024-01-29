@@ -45,7 +45,7 @@ function App() {
         `https://api.spoonacular.com/recipes/${recipe.id}/analyzedInstructions?apiKey=ef9b141bb0434016904ffe375a903760`
       );
   
-      // Check if detailed instructions are available
+      
       const instructions =
         detailedResponse.data.length > 0
           ? detailedResponse.data[0].steps.map((step) => step.step)
@@ -54,7 +54,7 @@ function App() {
       setSelectedRecipe({ ...recipe, instructions });
     } catch (error) {
       console.error('Error fetching detailed recipe information:', error);
-      // If detailed information is not available, use the original response
+      
       setSelectedRecipe(recipe);
     }
   };
